@@ -18,9 +18,6 @@ var createDefaultEngine = function () {
     disableWebGL2Support: false,
   });
 };
-// You have to create a function called createScene. This function must return a BABYLON.Scene object
-// You can reference the following variables: engine, canvas
-// You must at least define a camera
 
 var createScene = function () {
   var scene = new BABYLON.Scene(engine);
@@ -164,6 +161,8 @@ var createScene = function () {
     if (ball.position.x > 75 || ball.position.x < -75) {
       ball.position.x = 0;
       ball.position.z = 0;
+      ballVelocity.vx = Math.random() < 0.5 ? 0.25 : -0.25;
+      ballVelocity.vy = Math.random() < 0.5 ? 0.25 : -0.25;
     }
 
     leftPaddle.position.z += leftPaddleVz;
@@ -181,14 +180,14 @@ var createScene = function () {
       ball.intersectsMesh(frontWall, false) ||
       ball.intersectsMesh(backWall, false)
     ) {
-      ballVelocity.vz = -ballVelocity.vz;
+      ballVelocity.vz = -1.02 * ballVelocity.vz;
       ball.position.z += ballVelocity.vz + 2 * ballVelocity.vz;
     }
     if (
       ball.intersectsMesh(leftPaddle, false) ||
       ball.intersectsMesh(rightPaddle, false)
     ) {
-      ballVelocity.vx = -ballVelocity.vx;
+      ballVelocity.vx = -1.02 * ballVelocity.vx;
       ball.position.x += ballVelocity.vx + 2 * ballVelocity.vx;
     }
   });

@@ -1,3 +1,5 @@
+![3d-pingpong-img](3d-pingpong-img.jpg)
+
 # [3d-pingpong](https://brianrahadi.github.io/3d-pingpong/)
 You like 3D graphics? You like ping pong? We got 3D pingpong!
 
@@ -12,8 +14,6 @@ A fun 3D ping-pong game built with Babylon.js library. It lets you to play ping-
 
 ## Further Improvements
 - Implement score system for the game
-- Make the ball to move faster over time in 1 round (if player has not scored)
-- Resetted ball must have randomized direction
 
 ## Acknowledgement
 - https://www.babylonjs.com/
